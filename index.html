@@ -26,13 +26,14 @@
     min-height: 100dvh;
     background: #000;
     overflow: visible;
-    padding: 16px 0 24px;
+    padding: 12px 0 20px;
   }
 
+  /* 桌機版維持大畫面 */
   #unity-container {
     position: relative;
-    width: min(calc(100vw - 24px), calc((100dvh - 40px) * 16 / 9));
-    height: calc(min(calc(100vw - 24px), calc((100dvh - 40px) * 16 / 9)) * 9 / 16);
+    width: min(calc(100vw - 24px), calc((100dvh - 32px) * 16 / 9));
+    height: calc(min(calc(100vw - 24px), calc((100dvh - 32px) * 16 / 9)) * 9 / 16);
     margin: 0 auto;
     background: #000;
     overflow: hidden;
@@ -102,12 +103,31 @@
     background: #000;
   }
 
+  /* 手機版整體再縮一點 */
   @media (max-width: 768px) {
+    #stage {
+      padding-top: 8px;
+      padding-bottom: 16px;
+    }
+
+    #unity-container {
+      width: min(calc(100vw - 32px), calc((100dvh - 90px) * 16 / 9));
+      height: calc(min(calc(100vw - 32px), calc((100dvh - 90px) * 16 / 9)) * 9 / 16);
+    }
+
     #ending-video-overlay {
       left: 6%;
       top: 24%;
       width: 30%;
       height: 16%;
+    }
+  }
+
+  /* 手機橫向再額外保守一點，避免被上方工具列切掉 */
+  @media (max-width: 932px) and (orientation: landscape) {
+    #unity-container {
+      width: min(calc(100vw - 40px), calc((100dvh - 110px) * 16 / 9));
+      height: calc(min(calc(100vw - 40px), calc((100dvh - 110px) * 16 / 9)) * 9 / 16);
     }
   }
 
