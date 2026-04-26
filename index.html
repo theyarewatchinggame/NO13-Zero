@@ -43,9 +43,10 @@
 
   #unity-container {
     position: relative !important;
-    width: min(calc(100vw - 24px), calc((100vh - 32px) * 960 / 600));
-    width: min(calc(100vw - 24px), calc((100dvh - 32px) * 960 / 600));
-    aspect-ratio: 960 / 600;
+    /* 已將 960 / 600 修改為 16 / 9 */
+    width: min(calc(100vw - 24px), calc((100vh - 32px) * 16 / 9));
+    width: min(calc(100vw - 24px), calc((100dvh - 32px) * 16 / 9));
+    aspect-ratio: 16 / 9;
     height: auto !important;
     margin: 0 auto;
     background: #000;
@@ -142,8 +143,9 @@
       left: auto !important;
       transform: none !important;
 
-      width: min(calc(100vw - 24px), calc((100dvh - 48px) * 960 / 600)) !important;
-      aspect-ratio: 960 / 600 !important;
+      /* 手機版的計算公式也同步修改為 16 / 9 */
+      width: min(calc(100vw - 24px), calc((100dvh - 48px) * 16 / 9)) !important;
+      aspect-ratio: 16 / 9 !important;
       height: auto !important;
 
       margin: 0 auto !important;
